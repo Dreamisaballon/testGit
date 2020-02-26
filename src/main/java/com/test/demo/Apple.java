@@ -7,5 +7,7 @@ public class Apple {
 		System.out.println("update from repository name is testGit");
 		System.out.println("update from repository name is SHangHai");
 		System.out.println("update from project testGit2");
+		System.out.println("update from project testGit1");
+		
 	}
 }
