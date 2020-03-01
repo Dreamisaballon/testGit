@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 
+import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
@@ -20,8 +21,9 @@ public class CustomConsumer {
 		Properties props = new Properties();
 		//kafka集群
 		props.put("bootstrap.servers", "zk1:9092");
-		//消费者id
+		//消费组id
 		props.put("group.id", "test");
+		props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 		//设置自动提交offset
 		props.put("enable.auto.commit", "true");
 		//延时提交
