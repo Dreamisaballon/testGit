@@ -31,6 +31,7 @@ public class CustomConsumer {
 		props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 		KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
 		consumer.subscribe(Arrays.asList("second", "first", "third"));
+		System.out.println("update from ShangHai");
 		while(true)	{
 			ConsumerRecords<String, String> consumerRecords = consumer.poll(Duration.ofMillis(100));
 			Set<TopicPartition> partitions = consumerRecords.partitions();
