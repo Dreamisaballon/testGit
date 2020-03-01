@@ -37,7 +37,7 @@ public class ConsumerProducer {
 		s1.setAge(21);
 		String message = JSON.toJSONString(s1);
 		for(int i = 0; i < 10; i++)	{
-			producer.send(new ProducerRecord<String, String>("second", message + "！！" + i), new Callback() {
+			producer.send(new ProducerRecord<String, String>("third", message + "！！" + i), new Callback() {
 				
 				@Override
 				public void onCompletion(RecordMetadata metadata, Exception exception) {
